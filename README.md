@@ -1,12 +1,14 @@
 <a name="readme-top"></a>
 
 <div align="center">
-    <img src="./lordksix-logos_transparent.png" alt="logo" width="240"  height="auto" margin="auto"/>
+    <img src="./assets/lordksix-logos_transparent.png" alt="logo" width="240"  height="auto" margin="auto"/>
+</div>
+<div align="center">
+    <img src="./assets/blog_app_erd.png" alt="logo" width="400"  height="auto" margin="auto"/>
     <br/>
   <h3><b>Blog by Rails</b></h3>
 
 </div>
-
 
 # 📗 Table of Contents
 
