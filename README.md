@@ -71,6 +71,7 @@
 - **Linters implemented**
 - **Rubocop implemented**
 - **Implement Model Migrations**
+- **Implement Custom methods for models**
 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
