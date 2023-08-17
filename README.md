@@ -1,12 +1,14 @@
 <a name="readme-top"></a>
 
 <div align="center">
-    <img src="./lordksix-logos_transparent.png" alt="logo" width="240"  height="auto" margin="auto"/>
+    <img src="./assets/lordksix-logos_transparent.png" alt="logo" width="240"  height="auto" margin="auto"/>
+</div>
+<div align="center">
+    <img src="./assets/blog_app_erd.png" alt="logo" width="400"  height="auto" margin="auto"/>
     <br/>
   <h3><b>Blog by Rails</b></h3>
 
 </div>
-
 
 # 📗 Table of Contents
 
@@ -19,8 +21,6 @@
   - [Prerequisites](#prerequisites)
   - [Install](#install)
   - [Usage](#usage)
-  - [Run tests](#run-tests)
-  - [Deployment](#deployment)
 - [👥 Authors](#authors)
 - [🔭 Future Features](#future-features)
 - [🤝 Contributing](#contributing)
@@ -69,6 +69,7 @@
 - **Linters implemented**
 - **Rubocop implemented**
 - **Implement Model Migrations**
+- **Implement Custom methods for models**
 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
@@ -119,14 +120,6 @@ In the project directory, you can run:
   rails s
 ```
 
-
-### Run tests
-
-- TBA
-
-### Deployment
-
-- TBA
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
