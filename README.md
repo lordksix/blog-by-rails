@@ -21,8 +21,6 @@
   - [Prerequisites](#prerequisites)
   - [Install](#install)
   - [Usage](#usage)
-  - [Run tests](#run-tests)
-  - [Deployment](#deployment)
 - [👥 Authors](#authors)
 - [🔭 Future Features](#future-features)
 - [🤝 Contributing](#contributing)
@@ -122,14 +120,6 @@ In the project directory, you can run:
   rails s
 ```
 
-
-### Run tests
-
-- TBA
-
-### Deployment
-
-- TBA
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
