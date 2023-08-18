@@ -21,6 +21,7 @@
   - [Prerequisites](#prerequisites)
   - [Install](#install)
   - [Usage](#usage)
+  - [Run tests](#run-tests)
 - [👥 Authors](#authors)
 - [🔭 Future Features](#future-features)
 - [🤝 Contributing](#contributing)
@@ -70,7 +71,7 @@
 - **Rubocop implemented**
 - **Implement Model Migrations**
 - **Implement Custom methods for models**
-
+- **Implement unit tests for models**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -120,6 +121,13 @@ In the project directory, you can run:
   rails s
 ```
 
+### Run tests
+
+In the project directory, you can run:
+
+```sh
+  rspec .
+```
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -136,7 +144,7 @@ In the project directory, you can run:
 ## 🔭 Future Features <a name="future-features"></a>
 
 Future changes:
-- Implement validations
+- Setup and controllers.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
