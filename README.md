@@ -72,6 +72,7 @@
 - **Implement Model Migrations**
 - **Implement Custom methods for models**
 - **Implement unit tests for models**
+- **Implement Users and Posts controllers**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -144,7 +145,7 @@ In the project directory, you can run:
 ## 🔭 Future Features <a name="future-features"></a>
 
 Future changes:
-- Setup and controllers.
+- Implement specs for controllers.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
