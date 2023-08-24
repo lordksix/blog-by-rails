@@ -16,15 +16,16 @@ User.destroy_all
 quantity_users = 10
 quantity_posts = 10
 quantity_comments = 10
+quantity_likes = 20
 
 for user_position in 1..quantity_users do
   temp_user = User.create!(name: "User Number #{user_position}", photo: 'https://placehold.co/200x200', bio: Faker::Lorem.sentences(number: 4).join(' '), post_counter: 0)
-  for post_position in 1..quantity_posts do
+  for post_position in 1..Random.rand(quantity_posts) do
     temp_post = Post.create!(author: temp_user, title: "Post ##{post_position}", text: Faker::Lorem.sentences(number: 12).join(' '))
-    for comment_position in 1..quantity_comments do
+    for comment_position in 1..Random.rand(quantity_comments) do
       Comment.create!(post: temp_post, author: temp_user, text: Faker::Lorem.sentences(number: 6).join(' '))
     end
-    for like in 1..Random.rand(20) do
+    for like in 1..Random.rand(quantity_likes) do
       Like.create!(post: temp_post, author: temp_user)
     end
   end
