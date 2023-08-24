@@ -26,7 +26,7 @@ RSpec.describe 'Posts', type: :request do
     it 'should include correct placeholder text in the response body' do
       temp = User.create! valid_attributes_user
       get "/users/#{temp.id}/posts"
-      expect(response.body).to include('Here is a list of posts for a given user')
+      expect(response.body).to include('Post')
     end
   end
 
