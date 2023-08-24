@@ -1,21 +1,17 @@
 <div class="flex flex-col w-full max-w-3xl mx-auto gap-6 justify-center align-center">
-  <h1 class="text-center">Add New Post</h1>
-  <% if @post.errors.any? %>
+  <h1 class="text-center">Add New Comment to post: <%= @post.title %></h1>
+  <% if @comment.errors.any? %>
     <div class="post-errors-box">
-      <p><%= pluralize(@post.errors.count, "error") %> found:</p>
+      <p><%= pluralize(@comment.errors.count, "error") %> found:</p>
 
       <ul class="post-errors-ul">
-        <% @post.errors.full_messages.each do |message| %>
+        <% @comment.errors.full_messages.each do |message| %>
           <li><%= message %></li>
         <% end %>
       </ul>
     </div>
   <% end %>
-  <%= form_with url: "/users/#{@current_user.id}/posts", model: @post, class: 'flex flex-col w-full max-w-3xl mx-auto gap-6 justify-center align-center' do |form| %>
-    <div class="flex flex-col w-full max-w-3xl">
-      <%= form.label :title %>
-      <%= form.text_field :title, class: 'w-full' %>
-    </div>
+  <%= form_with url: user_post_comments_path, model: @comment, class: 'flex flex-col w-full max-w-3xl mx-auto gap-6 justify-center align-center' do |form| %>
     <div class="flex flex-col w-full max-w-3xl">
       <%= form.label :text %>
       <%= form.text_area :text, size: "70x5", class: 'w-full' %>

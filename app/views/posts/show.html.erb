@@ -8,4 +8,7 @@
     </div>
     <p class="mt-2"><%= @post.text %></p>
   </div>
+  <div class="flex justify-center align-center">
+  <a href="/users/<%= @user.id %>/posts/<%= @post.id %>/comments/new" class="px-4 py-2 border-2 border-black cursor:pointer mb-8">Create a new Comment</a>
+</div>
   <%= render 'shared/comment_card', comments: @post.comments unless @post.comments.empty? %>
