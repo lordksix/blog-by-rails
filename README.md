@@ -121,9 +121,7 @@ To install dependencies, the following command must be run in the terminal:
 To create database,migrate schema and implement initial database entries
 
 ```sh
-  rake db:create
-  rake db:migrate
-  rails db:seed
+  rails db:setup
 ```
 
 ### Usage
