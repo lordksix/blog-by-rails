@@ -1,2 +1,11 @@
-<h1>Specific post by user</h1>
-<p>Here are details for a given post</p>
+  <div class="flex flex-col w-full max-w-3xl gap-2 px-3 py-5 mx-auto mb-1 border-2 border-black">
+    <div class="flex justify-between">
+      <h4 class="card-title"><%= @post.title %> by <%= @post.author.name %></h4>
+      <div class="flex self-end text-xs">
+        <p class="m-0">Comments: <%= @post.comments_counter %>,&nbsp;</p>
+        <p class="m-0">Likes: <%= @post.likes_counter %></p>
+      </div>
+    </div>
+    <p class="mt-2"><%= @post.text %></p>
+  </div>
+  <%= render 'shared/comment_card', comments: @post.comments unless @post.comments.empty? %>
