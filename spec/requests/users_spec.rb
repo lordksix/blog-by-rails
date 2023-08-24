@@ -19,7 +19,7 @@ RSpec.describe 'Users', type: :request do
 
     it 'should include correct placeholder text in the response body' do
       get '/users'
-      expect(response.body).to include('Here is a the list of all users')
+      expect(response.body).to include('User')
     end
   end
 
@@ -46,7 +46,7 @@ RSpec.describe 'Users', type: :request do
     it 'should include correct placeholder text in the response body' do
       temp = User.create! valid_attributes
       get "/users/#{temp.id}"
-      expect(response.body).to include('Here are details for a given user')
+      expect(response.body).to include('Bio')
     end
   end
 end

@@ -1,2 +1,8 @@
-<h1>All users</h1>
-<p>Here is a the list of all users</p>
+<% if @users.empty? %>
+  <h1 class="text-center">There is no User for now</h1>
+<% end %>
+<% @users.each do |user| %>
+  <a href="/users/<%= user.id %>" class="w-full max-w-3xl mx-auto cursor:pointer">
+    <%= render 'shared/user_card', user: user %>
+  </a>
+<% end %>

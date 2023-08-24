@@ -74,6 +74,8 @@
 - **Implement unit tests for models**
 - **Implement Users and Posts controllers**
 - **Implement request tests for Users and Posts controllers**
+- **Implement views**
+- **Imitial population with seeds.rb**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -85,6 +87,7 @@ In order to run this project you need:
 - To clone or fork this repo
 - Ruby installed in your machine
 - Ruby on Rails gem installed
+- PostgreSQL install in you computer
 - To modify this profile you will also need a text editor
 
 For more information on how to install ruby on your machine:
@@ -113,6 +116,12 @@ To install dependencies, the following command must be run in the terminal:
 ```sh
   cd blog-by-rails
   bundle install
+```
+
+To create database,migrate schema and implement initial database entries
+
+```sh
+  rails db:setup
 ```
 
 ### Usage
@@ -146,7 +155,7 @@ In the project directory, you can run:
 ## 🔭 Future Features <a name="future-features"></a>
 
 Future changes:
-- Implement Views.
+- Implement forms.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
