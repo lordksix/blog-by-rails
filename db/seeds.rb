@@ -18,7 +18,7 @@ quantity_posts = 10
 quantity_comments = 10
 
 for user_position in 1..quantity_users do
-  temp_user = User.create!(name: "User Number #{user_position}", photo: 'https://placehgold.co/200x200', bio: Faker::Lorem.sentences(number: 4).join(' '), post_counter: 0)
+  temp_user = User.create!(name: "User Number #{user_position}", photo: 'https://placehold.co/200x200', bio: Faker::Lorem.sentences(number: 4).join(' '), post_counter: 0)
   for post_position in 1..quantity_posts do
     temp_post = Post.create!(author: temp_user, title: "Post ##{post_position}", text: Faker::Lorem.sentences(number: 12).join(' '))
     for comment_position in 1..quantity_comments do
