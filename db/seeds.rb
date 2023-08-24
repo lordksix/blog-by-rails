@@ -5,3 +5,32 @@
 #
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
+#
+require 'faker'
+
+Like.destroy_all
+Comment.destroy_all
+Post.destroy_all
+User.destroy_all
+
+quantity_users = 10
+quantity_posts = 10
+quantity_comments = 10
+
+for user_position in 1..quantity_users do
+  temp_user = User.create!(name: "User Number #{user_position}", photo: 'https://placehgold.co/200x200', bio: Faker::Lorem.sentences(number: 4).join(' '), post_counter: 0)
+  for post_position in 1..quantity_posts do
+    temp_post = Post.create!(author: temp_user, title: "Post ##{post_position}", text: Faker::Lorem.sentences(number: 12).join(' '))
+    for comment_position in 1..quantity_comments do
+      Comment.create!(post: temp_post, author: temp_user, text: Faker::Lorem.sentences(number: 6).join(' '))
+    end
+    for like in 1..Random.rand(20) do
+      Like.create!(post: temp_post, author: temp_user)
+    end
+  end
+end
+
+puts "Created #{User.count} users"
+puts "Created #{Post.count} posts"
+puts "Created #{Comment.count} comments"
+puts "Assigned #{Like.count} likes, randomly"
