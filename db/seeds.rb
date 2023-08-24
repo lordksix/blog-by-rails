@@ -17,16 +17,22 @@ quantity_users = 10
 quantity_posts = 10
 quantity_comments = 10
 quantity_likes = 20
+users = []
 
 for user_position in 1..quantity_users do
   temp_user = User.create!(name: "User Number #{user_position}", photo: 'https://placehold.co/200x200', bio: Faker::Lorem.sentences(number: 4).join(' '), post_counter: 0)
+  users << temp_user
+end
+
+for user_position in 0..(quantity_users - 1) do
   for post_position in 1..Random.rand(quantity_posts) do
-    temp_post = Post.create!(author: temp_user, title: "Post ##{post_position}", text: Faker::Lorem.sentences(number: 12).join(' '))
+    temp_post = Post.create!(author: users[user_position], title: "Post ##{post_position}", text: Faker::Lorem.sentences(number: 12).join(' '))
     for comment_position in 1..Random.rand(quantity_comments) do
-      Comment.create!(post: temp_post, author: temp_user, text: Faker::Lorem.sentences(number: 6).join(' '))
+      position = Random.rand(quantity_users)
+      Comment.create!(post: temp_post, author: users[Random.rand(quantity_users)], text: Faker::Lorem.sentences(number: 6).join(' '))
     end
     for like in 1..Random.rand(quantity_likes) do
-      Like.create!(post: temp_post, author: temp_user)
+      Like.create!(post: temp_post, author: users[Random.rand(quantity_users)])
     end
   end
 end
