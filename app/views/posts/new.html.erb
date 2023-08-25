@@ -1,0 +1,27 @@
+<div class="flex flex-col w-full max-w-3xl mx-auto gap-6 justify-center align-center">
+  <h1 class="text-center">Add New Post</h1>
+  <% if @post.errors.any? %>
+    <div class="post-errors-box">
+      <p><%= pluralize(@post.errors.count, "error") %> found:</p>
+
+      <ul class="post-errors-ul">
+        <% @post.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <%= form_with url: "/users/#{@current_user.id}/posts", model: @post, class: 'flex flex-col w-full max-w-3xl mx-auto gap-6 justify-center align-center' do |form| %>
+    <div class="flex flex-col w-full max-w-3xl">
+      <%= form.label :title %>
+      <%= form.text_field :title, class: 'w-full' %>
+    </div>
+    <div class="flex flex-col w-full max-w-3xl">
+      <%= form.label :text %>
+      <%= form.text_area :text, size: "70x5", class: 'w-full' %>
+    </div>
+    <div class="flex justify-center align-center w-full max-w-3xl">
+      <%= form.submit class: 'px-4 py-2 border-2 border-black cursor:pointer mb-8' %>
+    </div>
+  <% end %>
+</div>

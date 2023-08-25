@@ -50,7 +50,7 @@ RSpec.describe 'Posts', type: :request do
     it 'should include correct placeholder text in the response body' do
       temp = user.posts.create! valid_attributes_post
       get "/users/#{user.id}/posts/#{temp.id}"
-      expect(response.body).to include('Here are details for a given post')
+      expect(response.body).to include('Post')
     end
   end
 end

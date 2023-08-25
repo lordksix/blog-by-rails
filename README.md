@@ -75,7 +75,8 @@
 - **Implement Users and Posts controllers**
 - **Implement request tests for Users and Posts controllers**
 - **Implement views**
-- **Imitial population with seeds.rb**
+- **Initial population with seeds.rb**
+- **Implement forms for creating a post and comment**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -155,7 +156,7 @@ In the project directory, you can run:
 ## 🔭 Future Features <a name="future-features"></a>
 
 Future changes:
-- Implement forms.
+- Implement integration spec for views.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
