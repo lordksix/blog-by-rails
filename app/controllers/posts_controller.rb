@@ -11,6 +11,8 @@ class PostsController < ApplicationController
   def show
     @user = User.find_by(id: params[:user_id])
     @post = @user.posts.find(params[:id])
+    @current_user = current_user
+    @like = Like.new
   end
 
   def create
@@ -21,10 +23,9 @@ class PostsController < ApplicationController
 
     if post.save
       flash[:success] = 'post saved successfully'
-      redirect_to '/'
+      redirect_to "/users/#{current_user.id}/posts"
     else
       flash.now[:error] = 'error: question could not be saved'
-      redirect_to new_user_post_path
     end
   end
 
