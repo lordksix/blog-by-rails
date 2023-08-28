@@ -13,7 +13,7 @@
 # 📗 Table of Contents
 
 - [📗 Table of Contents](#-table-of-contents)
-- [📖 \[School Library App\] ](#-school-library-app-)
+- [📖 \[Blog App\] ](#-blog-app-)
   - [🛠 Built With ](#-built-with-)
     - [Tech Stack ](#tech-stack-)
     - [Key Features ](#key-features-)
@@ -31,7 +31,7 @@
   - [❓ FAQ ](#-faq-)
   - [📝 License ](#-license-)
 
-# 📖 [School Library App] <a name="about-project"></a>
+# 📖 [Blog App] <a name="about-project"></a>
 
 **Blog by Rails** is a  blog web application with PostgreSQL as database.
 
