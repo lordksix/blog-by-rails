@@ -1,9 +1,10 @@
 class PostsController < ApplicationController
   def index
-    @user = User.includes(posts: %i[comments likes]).find_by(id: params[:user_id])
+    @user = User.includes(:posts).find_by(id: params[:user_id])
     page = params[:page] || 1
     per_page = 4
-    @posts = @user.posts.order(created_at: :asc).offset((page.to_i - 1) * per_page).limit(per_page)
+    @posts = @user.posts.includes(:comments,
+                                  :likes).order(created_at: :asc).offset((page.to_i - 1) * per_page).limit(per_page)
     @total_posts = @user.posts
     @total_pages = (@total_posts.count.to_f / per_page).ceil
   end
