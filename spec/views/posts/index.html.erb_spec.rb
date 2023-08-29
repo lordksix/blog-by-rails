@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe 'posts/index.html.erb', type: :system do
+RSpec.describe 'User Post Index page', type: :system do
   before(:each) do
     @user_one = User.create(
       name: 'Max',
@@ -65,5 +65,14 @@ RSpec.describe 'posts/index.html.erb', type: :system do
     expect(page).to have_content('Likes: 0')
     expect(page).to have_content('Comments: 1')
     expect(page).to have_content('Pagination')
+  end
+
+  it 'redirects to post show page when clicking on a post' do
+    visit user_posts_path(user_id: @user_one.id)
+    find("a[id='user-#{@user_one.id}-post-#{@post_one.id}']").click
+
+    sleep(2)
+    current_path
+    expect(current_path).to eq(user_post_path(user_id: @user_one.id, id: @post_one.id))
   end
 end
