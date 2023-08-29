@@ -8,7 +8,7 @@
   <a href="/users/<%= @user.id %>/posts/new" class="px-4 py-2 border-2 border-black cursor:pointer mb-8">Create a new Post</a>
 </div>
 
-<% @posts.each do |post| %>
+<% @posts.includes(:author).each do |post| %>
   <a href="/users/<%= post.author.id %>/posts/<%= post.id %>" id="user-<%= post.author.id %>-post-<%= post.id %>"  class="mb-8 cursor-pointer">
     <div class="flex flex-col w-full gap-1">
       <%= render 'shared/post_card', post: post %>
