@@ -47,7 +47,7 @@ Rails.application.configure do
   #This ensures that email deliveries are enabled in the development environment for testing purposes
   config.action_mailer.perform_deliveries = true
 
-  config.action_mailer.delivery_method = :sendmail
+  config.action_mailer.delivery_method = :smtp
 
   config.action_mailer.default_options = { from: 'no-reply@example.com'}
 
