@@ -8,8 +8,14 @@
   </div>
   <p class="mt-2"><%= @post.text %></p>
 </div>
+
 <div class="flex justify-center align-center gap-4">
-  <a href="/users/<%= @user.id %>/posts/<%= @post.id %>/comments/new" class="px-4 py-2 border-2 border-black cursor:pointer mb-8">Create a new Comment</a>
+  <% if user_signed_in? %>
+      <a href="/users/<%= @user.id %>/posts/<%= @post.id %>/comments/new" class="px-4 py-2 border-2 border-black cursor:pointer mb-8">Create a new Comment</a>
   <%= render 'shared/add_like' %>
+  <% else %>
+    <p>Please, sign in to create a comment or like the post</p>
+  <% end %>
 </div>
+
 <%= render 'shared/comment_card', comments: @post.comments.includes(:author) unless @post.comments.empty? %>

@@ -1,4 +1,5 @@
-<div class="flex flex-col w-full max-w-3xl mx-auto gap-6 justify-center align-center">
+<% if user_signed_in? %>
+  <div class="flex flex-col w-full max-w-3xl mx-auto gap-6 justify-center align-center">
   <h1 class="text-center">Add New Post</h1>
   <% if @post.errors.any? %>
     <div class="post-errors-box">
@@ -25,3 +26,6 @@
     </div>
   <% end %>
 </div>
+<% else %>
+  <p>Please, sign in to create a post</p>
+<% end %>
