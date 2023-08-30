@@ -13,4 +13,9 @@ class User < ApplicationRecord
   def three_most_recent_posts
     posts.order(created_at: :desc).limit(3)
   end
+
+  before_create :default_post_counter
+  def default_post_counter
+    post_counter || 0
+  end
 end
