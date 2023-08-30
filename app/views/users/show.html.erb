@@ -4,10 +4,10 @@
   <p><%= @user.bio %></p>
 </div>
 <% @user.three_most_recent_posts.each do |post| %>
-  <a href="/users/<%= @user.id %>/posts/<%= post.id %>" class="w-full max-w-3xl mx-auto mb-3 cursor:pointer">
+  <a href="/users/<%= @user.id %>/posts/<%= post.id %>" id="user-<%= @user.id %>-post-<%= post.id %>" class="w-full max-w-3xl mx-auto mb-3 cursor:pointer">
     <%= render 'shared/post_card', post: post %>
   </a>
 <% end %>
 <div class="flex justify-center align-center">
-  <a href="/users/<%= @user.id %>/posts" class="px-4 py-2 border-2 border-black cursor:pointer">See all posts</a>
+  <a id="see-posts" href="/users/<%= @user.id %>/posts" class="px-4 py-2 border-2 border-black cursor:pointer">See all posts</a>
 </div>

@@ -8,14 +8,17 @@
   <a href="/users/<%= @user.id %>/posts/new" class="px-4 py-2 border-2 border-black cursor:pointer mb-8">Create a new Post</a>
 </div>
 
-<% @posts.each do |post| %>
-  <a href="/users/<%= post.author.id %>/posts/<%= post.id %>" class="mb-8 cursor-pointer">
+<% @posts.includes(:author).each do |post| %>
+  <a href="/users/<%= post.author.id %>/posts/<%= post.id %>" id="user-<%= post.author.id %>-post-<%= post.id %>"  class="mb-8 cursor-pointer">
     <div class="flex flex-col w-full gap-1">
       <%= render 'shared/post_card', post: post %>
       <%= render 'shared/comment_card', comments: post.five_most_recent_comments unless post.five_most_recent_comments.empty? %>
     </div>
   </a>
 <% end %>
+<div class="flex justify-center align-center">
+  <p class="px-4 py-2 border-2 border-black cursor:pointer mb-8">Pagination</p>
+</div>
 <nav aria-label="Pagination for posts" class="mt-5">
   <ul class="flex justify-center gap-3 align-center">
     <% (1..@total_pages).each do |page| %>
