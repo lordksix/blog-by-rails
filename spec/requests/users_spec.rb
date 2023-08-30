@@ -24,8 +24,8 @@ RSpec.describe 'Users', type: :request do
   end
 
   describe 'GET users#show' do
-    let(:user) { User.create(name: 'John Doe', photo: nil, bio: nil, post_counter: 0) }
-    let(:valid_attributes) { { name: 'John Doe', photo: nil, bio: nil, post_counter: 0 } }
+    let(:user) { User.create(name: 'John Doe', photo: nil, bio: nil, email: 'email@email.com', password: 'abcdef') }
+    let(:valid_attributes) { { name: 'John Doe', photo: nil, bio: nil, email: 'email@email.com', password: 'abcdef' } }
 
     it 'should return http success' do
       get "/users/#{user.id}"
