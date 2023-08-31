@@ -1,4 +1,5 @@
 class PostsController < ApplicationController
+  authorize_resource
   def index
     @user = User.find_by(id: params[:user_id])
     page = params[:page] || 1
@@ -20,7 +21,6 @@ class PostsController < ApplicationController
     post.author = current_user
     post.comments_counter = 0
     post.likes_counter = 0
-
     if post.save
       flash[:success] = 'post saved successfully'
       redirect_to "/users/#{current_user.id}/posts"
@@ -32,6 +32,12 @@ class PostsController < ApplicationController
   def new
     @post = Post.new
     @current_user = current_user
+  end
+
+  def destroy
+    @current_user = current_user
+    @current_user.posts.destroy(params[:id])
+    redirect_to "/users/#{current_user.id}/posts"
   end
 
   private

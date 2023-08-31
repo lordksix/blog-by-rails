@@ -4,22 +4,22 @@
       <h1 class="text-center">Sign up</h1>
       <%= render "devise/shared/error_messages", resource: resource %>
 
-      <div class="field">
+      <div class="field m-auto">
         <%= f.label :email %><br />
         <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
       </div>
 
-        <div class="field">
+        <div class="field m-auto">
         <%= f.label :name %><br />
         <%= f.text_field :name %>
       </div>
 
-      <div class="field">
+      <div class="field m-auto">
         <%= f.label :surname %><br />
         <%= f.text_field :surname %>
       </div>
 
-      <div class="field">
+      <div class="field m-auto">
         <%= f.label :password %>
         <% if @minimum_password_length %>
         <em>(<%= @minimum_password_length %> characters minimum)</em>
@@ -27,12 +27,12 @@
         <%= f.password_field :password, autocomplete: "new-password" %>
       </div>
 
-      <div class="field">
+      <div class="field m-auto">
         <%= f.label :password_confirmation %><br />
         <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
       </div>
 
-      <div class="actions px-4 py-2 border-2 border-black self-start">
+      <div class="actions px-4 py-2 border-2 border-black self-start m-auto">
         <%= f.submit "Sign up" %>
       </div>
     </div>

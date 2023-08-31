@@ -3,6 +3,13 @@
   <h4 class="card-title">Bio</h4>
   <p><%= @user.bio %></p>
 </div>
+<div class="flex justify-center align-center">
+  <% if user_signed_in? %>
+    <a href="/users/<%= @user.id %>/posts/new" class="px-4 py-2 border-2 border-black cursor:pointer mb-8">Create a new Post</a>
+  <% else %>
+    <p>Please, sign in to create a post</p>
+  <% end %>
+</div>
 <% @user.three_most_recent_posts.each do |post| %>
   <a href="/users/<%= @user.id %>/posts/<%= post.id %>" id="user-<%= @user.id %>-post-<%= post.id %>" class="w-full max-w-3xl mx-auto mb-3 cursor:pointer">
     <%= render 'shared/post_card', post: post %>
