@@ -80,6 +80,7 @@
 - **Implement forms for creating a post and comment**
 - **Implement integration tests**
 - **Implement devise gem and authentication**
+- **Implement authorization with cancancan gem**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -179,7 +180,7 @@ In the project directory, you can run:
 ## 🔭 Future Features <a name="future-features"></a>
 
 Future changes:
-- Implement authorization rules
+- Implement API endpoints
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 

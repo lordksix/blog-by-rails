@@ -1,5 +1,10 @@
 <div class="flex flex-col w-full max-w-3xl gap-2 px-3 py-5 mx-auto border-2 border-black">
   <% comments.includes(:author).each do |comment| %>
-    <p><%= comment.author.name %>: <%= comment.text %><span>...</span></p>
+    <div class="w-full py-5 border-y-2 border-black flex flex-col gap-4">
+      <p><b><%= comment.author.name %>:</b> <%= comment.text %><span>...</span></p>
+      <div class="flex justify-start align-center">
+        <%=  link_to 'Delete', user_post_comment_path(@user.id, @post.id, comment.id), class: "px-4 py-2 border-2 border-black cursor:pointer mb-8", data: { "turbo-method": :delete } if can? :destroy, comment %>
+      </div>
+    </div>
   <% end %>
 </div>
