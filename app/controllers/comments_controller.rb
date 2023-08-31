@@ -4,6 +4,7 @@ class CommentsController < ApplicationController
     @comment = Comment.new
     @post = Post.find(params[:post_id])
   end
+
   def create
     comment = Comment.new(comment_params)
     comment.post = Post.find(params[:post_id])
@@ -16,12 +17,15 @@ class CommentsController < ApplicationController
       redirect_to new_comment
     end
   end
+
   def destroy
     post = Post.find(params[:post_id])
     post.comments.destroy(params[:id])
     redirect_to "/users/#{params[:user_id]}/posts/#{params[:post_id]}"
   end
+
   private
+
   def comment_params
     params.require(:comment).permit(:text)
   end
