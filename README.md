@@ -144,6 +144,8 @@ if
   ./bin/dev
 ```
 
+Check on db/seed.rb for pre-loaded users, posts, comments, and likes for development
+
 ### Run tests
 
 In the project directory, you can run:
