@@ -11,9 +11,9 @@
 
 <div class="flex justify-center align-center gap-4">
   <% if user_signed_in? %>
-      <a href="/users/<%= @current_user.id %>/posts/<%= @post.id %>/comments/new" class="px-4 py-2 border-2 border-black cursor:pointer mb-8">Create a new Comment</a>
-      <%=  link_to 'Delete', user_post_path(@current_user.id, @post.id), class: "px-4 py-2 border-2 border-black cursor:pointer mb-8", data: { "turbo-method": :delete } if can? :destroy, @post %>
-  <%= render 'shared/add_like' %>
+    <a href="/users/<%= @current_user.id %>/posts/<%= @post.id %>/comments/new" class="px-4 py-2 border-2 border-black cursor:pointer mb-8">Create a new Comment</a>
+    <%=  link_to 'Delete', user_post_path(@current_user.id, @post.id), class: "px-4 py-2 border-2 border-black cursor:pointer mb-8", data: { "turbo-method": :delete } if can? :destroy, @post %>
+    <%= render 'shared/add_like' %>
   <% else %>
     <p>Please, sign in to create a comment or like the post</p>
   <% end %>
