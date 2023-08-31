@@ -5,7 +5,11 @@
 <% end %>
 
 <div class="flex justify-center align-center">
-  <a href="/users/<%= @user.id %>/posts/new" class="px-4 py-2 border-2 border-black cursor:pointer mb-8">Create a new Post</a>
+  <% if user_signed_in? %>
+    <a href="/users/<%= @user.id %>/posts/new" class="px-4 py-2 border-2 border-black cursor:pointer mb-8">Create a new Post</a>
+  <% else %>
+    <p>Please, sign in to create a post</p>
+  <% end %>
 </div>
 
 <% @posts.includes(:author).each do |post| %>

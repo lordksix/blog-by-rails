@@ -1,8 +1,12 @@
 require 'rails_helper'
 
 RSpec.describe 'Posts', type: :request do
-  let(:user) { User.create(name: 'John Doe', photo: nil, bio: nil, post_counter: 0) }
-  let(:valid_attributes_user) { { name: 'John Doe', photo: nil, bio: nil, post_counter: 0 } }
+  let(:user) do
+    User.create(name: 'John Doe', photo: nil, bio: nil, email: 'email@email.com', password: 'abcdef')
+  end
+  let(:valid_attributes_user) do
+    { name: 'John Doe', photo: nil, bio: nil, email: 'email@email.com', password: 'abcdef' }
+  end
   let(:post) { user.posts.create(title: 'Post Trial', text: 'Testing') }
   let(:valid_attributes_post) { { title: 'Post Trial', text: 'Testing' } }
 

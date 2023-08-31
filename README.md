@@ -78,6 +78,8 @@
 - **Implement views**
 - **Initial population with seeds.rb**
 - **Implement forms for creating a post and comment**
+- **Implement integration tests**
+- **Implement devise gem and authentication**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -123,7 +125,7 @@ To install dependencies, the following command must be run in the terminal:
 To create database,migrate schema and implement initial database entries
 
 ```sh
-  rails db:setup
+  rails db:drop db:setup
 ```
 
 ### Usage
@@ -133,6 +135,16 @@ In the project directory, you can run:
 ```sh
   rails s
 ```
+
+or
+
+if
+
+```sh
+  ./bin/dev
+```
+
+Check on db/seed.rb for pre-loaded users, posts, comments, and likes for development
 
 ### Run tests
 
@@ -167,7 +179,7 @@ In the project directory, you can run:
 ## 🔭 Future Features <a name="future-features"></a>
 
 Future changes:
-- Implement integration spec for views.
+- Implement authorization rules
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
