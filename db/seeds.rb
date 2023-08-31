@@ -28,6 +28,8 @@ for user_position in 1..quantity_users do
     email: "email#{user_position}@email.com",
     password: "abcdef"
   )
+  temp_user.skip_confirmation!
+  temp_user.save!
   users << temp_user
 end
 
