@@ -9,7 +9,6 @@ class Ability
     can %i[new create], Comment
     can %i[update destroy], Post, { author_id: user.id }
     can %i[update destroy], Comment, { author_id: user.id }
-    can :manage, Post if user.is? :admin
-    can :manage, Comment if user.is? :admin
+    can :manage, :all if user.is? :admin
   end
 end
