@@ -1,7 +1,6 @@
-class CommentsController < ApplicationController
+class Api::V1::CommentsController < Api::ApiController
   authorize_resource
   before_action :find_user_post_by_id
-
   def new
     @comment = Comment.new
   end
